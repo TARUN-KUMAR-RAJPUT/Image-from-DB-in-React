@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MyForm from "./Components/ShowList/MyForm";
+import MyNavbar from "./Components/Navbar/MyNavbar";
 
 function App() {
   const [user, setUser] = useState([]);
@@ -23,26 +24,51 @@ function App() {
     }
   }
 
+  //===================================================
+  // practice return..................
+  // return (
+  //   <div class="text-info ms-5 mt-5">
+  //     <h4>The Badass Uchihas</h4>
+  //     <hr className="bg-info w-75"
+  //       style={{
+  //         height: "5px",
+  //         border: "none",
+  //       }}
+  //     />
+  //   </div>
+  // );
+  //===================================================
+
   if (flag) {
-    var path = "Images/"
+    var path = "Images/";
     return (
-      <div className="text-info">
+      <div className="bg-black text-info">
         <MyForm toggle={toggle} />
-        <ul>
+        <div class="ms-5 mt-5">
+          <h4 className="text-light">The Badass Uchihas</h4>
+          <hr
+            className="bg-info w-75"
+            style={{
+              height: "5px",
+              border: "none",
+            }}
+          />
+        </div>
+        <div className="d-flex text-light">
           {user &&
             user.length > 0 &&
             user.map((userObj, index) => (
-              <div>
+              <ul>
                 <img
-                  src = {path + userObj.name + ".jpg"}
-                  alt="Logo" 
+                  src={path + userObj.name + ".jpg"}
+                  alt="Logo"
                   width="150"
                   height="200"
                 />
-                <h4>{userObj.name}</h4>
-              </div>
+                <h6>{userObj.name}</h6>
+              </ul>
             ))}
-        </ul>
+        </div>
       </div>
     );
   } else {
