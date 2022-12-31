@@ -24,21 +24,6 @@ function App() {
     }
   }
 
-  //===================================================
-  // practice return..................
-  // return (
-  //   <div class="text-info ms-5 mt-5">
-  //     <h4>The Badass Uchihas</h4>
-  //     <hr className="bg-info w-75"
-  //       style={{
-  //         height: "5px",
-  //         border: "none",
-  //       }}
-  //     />
-  //   </div>
-  // );
-  //===================================================
-
   if (flag) {
     var path = "Images/";
     return (
